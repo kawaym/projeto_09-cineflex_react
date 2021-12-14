@@ -8,6 +8,20 @@ export default function UniqueDate(){
             [
                 "15:00",
                 "19:00",
+                "15:00",
+                "19:00",
+                "15:00",
+                "19:00",
+                "15:00",
+                "19:00",
+                "15:00",
+                "19:00",
+                "15:00",
+                "19:00",
+                "15:00",
+                "19:00",
+                "15:00",
+                "19:00",
             ]
         },
         {
@@ -33,7 +47,11 @@ export default function UniqueDate(){
                 {times[0].day}
             </h1>
             <div className="container-buttons">
-                {times[0].hours.map((hour) => <button className="select-hour">{hour}</button>)}
+                {times[0].hours.map((hour) => <button 
+                                                className="select-hour" 
+                                                type="button">
+                                                  {hour}
+                                              </button>)}
             </div>
         </div>
     );

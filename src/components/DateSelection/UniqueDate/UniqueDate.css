@@ -15,9 +15,16 @@
     align-items: center;
     letter-spacing: 0.02em;
 }
+.container-date:not(:first-child){
+    margin-top: 20px;
+}
+.container-date:last-child{
+    margin-bottom: 20px;
+}
 .container-buttons{
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 .select-hour{
     width: 83px;

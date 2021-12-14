@@ -1,5 +1,6 @@
 import DateSelection from '../DateSelection/DateSelection';
 import MovieSelection from '../MovieSelection/MovieSelection';
+import PlaceSelection from '../PlaceSelection/PlaceSelection';
 import Posterframe from '../PosterFrame/Posterframe';
 import './Pageframe.css';
 export default function Pageframe({children}){
@@ -23,7 +24,7 @@ export default function Pageframe({children}){
                 <h1 className={`page-title`}>
                     Selecione o Filme
                 </h1>
-                <DateSelection/>
+                <PlaceSelection/>
             </main>
             {footer}
         </>

@@ -1,0 +1,18 @@
+.place{
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+}
+.selecionado{
+    background: #8DD7CF;
+    border: 1px solid #1AAE9E;
+}
+.disponivel{
+    background: #C3CFD9;
+    border: 1px solid #7B8B99;
+}
+.indisponivel{
+    background: #FBE192;
+    border: 1px solid #F7C52B;
+}
