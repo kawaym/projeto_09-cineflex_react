@@ -1,6 +1,6 @@
 .poster-frame{
-    width: auto;
-    height: auto;
+    width: fit-content;
+    height: fit-content;
 
     padding: 8px;
 
