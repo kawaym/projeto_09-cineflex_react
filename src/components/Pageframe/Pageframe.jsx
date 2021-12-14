@@ -2,6 +2,7 @@ import DateSelection from '../DateSelection/DateSelection';
 import MovieSelection from '../MovieSelection/MovieSelection';
 import PlaceSelection from '../PlaceSelection/PlaceSelection';
 import Posterframe from '../PosterFrame/Posterframe';
+import SuccessPage from '../SuccessPage/SuccessPage';
 import './Pageframe.css';
 export default function Pageframe({children}){
     const footer =  <footer className="order-summary">
@@ -22,9 +23,9 @@ export default function Pageframe({children}){
             </header>
             <main className="page-content">
                 <h1 className={`page-title`}>
-                    Selecione o Filme
+                    Selecione o(s) assento(s)
                 </h1>
-                <PlaceSelection/>
+                <SuccessPage/>
             </main>
             {footer}
         </>
