@@ -44,10 +44,13 @@
 
     position: fixed;
     top: 67px;
-    bottom: 117px;
+    bottom: 0px;
     z-index: auto;
     overflow-y: scroll;
     overflow-x: hidden;
+}
+.page-content.selection{
+    bottom: 117px;
 }
 .order-summary{
     width: 100%;

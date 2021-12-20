@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import "./reset.css";
 import "./App.css";
-import Pageframe from "../Pageframe/Pageframe";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MovieSelection from "../MovieSelection/MovieSelection";
+import PlaceSelection from "../PlaceSelection/PlaceSelection";
+import DateSelection from "../DateSelection/DateSelection";
 
 export default function App(){
-    const [posterFilmes, setPosterFilmes] = useState([]);
-    useEffect(() =>{
-        const promise = axios.get("https://mock-api.driven.com.br/api/v4/cineflex/movies");
-        promise.then((resposta) => setPosterFilmes(resposta.data));
-    }, []);
-    
-
     return (
         <>
-            <Pageframe></Pageframe>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<MovieSelection/>}></Route>
+                    <Route path="/sessoes/:idFilme" element={<DateSelection/>}></Route>
+                    <Route path="/assentos/:idSessao" element={<PlaceSelection/>}></Route>
+                </Routes>
+            </BrowserRouter>
         </>
     );
 }

@@ -4,16 +4,17 @@ import PlaceSelection from '../PlaceSelection/PlaceSelection';
 import Posterframe from '../PosterFrame/Posterframe';
 import SuccessPage from '../SuccessPage/SuccessPage';
 import './Pageframe.css';
-export default function Pageframe({children}){
+export default function Pageframe({pageFooter, pageTitle, children}){
+    const [title, posterURL] = pageFooter;
     const footer =  <footer className="order-summary">
-                        <Posterframe size="small" url="https://image.tmdb.org/t/p/w500/7D430eqZj8y3oVkLFfsWXGRcpEG.jpg"/>
+                        <Posterframe size="small" url={posterURL}/>
                         <div className="order-info">
                             <div className="order-title">
-                                Enola Holmes
+                                {title}
                             </div>
-                            <div className="order-date">
+                            {/* <div className="order-date">
                                 Quinta-feira - 15:00
-                            </div>
+                            </div> */}
                         </div>
                     </footer>;
     return (
@@ -21,13 +22,14 @@ export default function Pageframe({children}){
             <header className="logo">
                 CINEFLIX
             </header>
-            <main className="page-content">
+            <main className={`page-content ${(pageTitle === "movieSelection" || pageTitle === "dateSelection") ? 'selection' : ''}`}>
                 <h1 className={`page-title`}>
-                    Selecione o(s) assento(s)
+                    {pageTitle === "movieSelection" && "Selecione o filme"}
+                    {pageTitle === "dateSelection" && "Selecione o horário"}
                 </h1>
-                <SuccessPage/>
+                {children}
             </main>
-            {footer}
+            {pageFooter === '' ? '' : footer}
         </>
     );
 }
