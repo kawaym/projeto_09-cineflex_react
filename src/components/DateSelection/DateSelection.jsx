@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import Pageframe from "../Pageframe/Pageframe";
 import UniqueDate from "./UniqueDate/UniqueDate";
 
-export default function DateSelection(){
+export default function DateSelection({ userOrder, setUserOrder }){
     const {idFilme} = useParams();
 
     const [sessoes, setSessoes] = useState([]);
@@ -17,10 +17,14 @@ export default function DateSelection(){
             <div>carregando</div>
         );
     };
+    console.log(userOrder)
     return(
         <Pageframe pageFooter={[sessoes.title, sessoes.posterURL]} pageTitle='dateSelection'>
             <div className="container-dates">
-                {sessoes['days'].map((session) => <UniqueDate key={session.id} weekday={session.weekday} date={session.date} showtimes={session.showtimes}/>)}
+                {sessoes['days'].map((session) => <UniqueDate key={session.id} weekday={session.weekday} date={session.date} showtimes={session.showtimes}
+                                                    userOrder={userOrder}
+                                                    setUserOrder={setUserOrder}
+                                                    />)}
             </div>
        </Pageframe>
     );
